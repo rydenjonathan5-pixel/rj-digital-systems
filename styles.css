@@ -150,3 +150,5 @@ h2 { color: #E2E8F0; margin-bottom: 40px; }
   color: #64748B;
   text-align: center;
 }
+
+.nav-links.show { display: flex; }
