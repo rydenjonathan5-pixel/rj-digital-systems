@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | RJ Digital Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: { black: '#050505', gold: '#FFD700', card: '#111111' } },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    borderRadius: { '4xl': '2.5rem' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: white; -webkit-tap-highlight-color: transparent; }
+        .hero-gradient { background: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.15) 0%, rgba(5, 5, 5, 1) 70%); }
+        .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.06); }
+        .hover-lift { transition: transform 0.3s ease; } .hover-lift:hover { transform: translateY(-4px); }
+        #mobile-menu { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); max-height: 0; opacity: 0; overflow: hidden; transform-origin: top; transform: scaleY(0.95); }
+        #mobile-menu.open { max-height: 400px; opacity: 1; margin-top: 1rem; transform: scaleY(1); }
+        .reveal-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal-on-scroll.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="font-sans antialiased hero-gradient min-h-screen selection:bg-brand-gold selection:text-black">
+
+    <div class="fixed top-6 left-0 right-0 z-50 flex flex-col items-center px-4 pointer-events-none">
+        <nav class="glass-panel rounded-full px-6 py-3 flex items-center gap-8 shadow-2xl bg-[#0a0a0a]/90 pointer-events-auto w-full max-w-4xl justify-between md:justify-start">
+            <a href="index.html" class="flex items-center gap-2 pr-4 md:border-r border-white/10 hover:text-brand-gold transition active:scale-95">
+                <i class="fas fa-arrow-left text-xs"></i>
+                <span class="font-bold text-sm tracking-tight">Home</span>
+            </a>
+            <div class="hidden md:flex gap-6 text-xs font-semibold text-gray-400">
+                <span class="text-white cursor-default">About Us</span>
+                <a href="faq.html" class="hover:text-white transition active:scale-95">FAQ</a>
+            </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2 focus:outline-none active:scale-90 ml-auto">
+                <i class="fas fa-bars text-lg"></i>
+            </button>
+            <button onclick="openWhatsApp('NavBookAudit')" class="hidden md:block bg-white text-black px-5 py-2 rounded-full text-xs font-bold hover:bg-brand-gold transition whitespace-nowrap active:scale-95 shadow-lg ml-auto">
+                Book Audit
+            </button>
+        </nav>
+        <div id="mobile-menu" class="w-full max-w-[90%] glass-panel rounded-3xl flex flex-col items-center gap-4 py-6 text-sm font-bold text-gray-300 bg-[#111] pointer-events-auto shadow-2xl md:hidden">
+            <span class="text-brand-gold w-full text-center py-3 bg-white/5">About Us</span>
+            <a href="faq.html" class="hover:text-brand-gold w-full text-center py-3 active:bg-white/5 transition">FAQ</a>
+            <button onclick="openWhatsApp('NavBookAudit')" class="bg-white text-black px-8 py-3 rounded-full text-xs font-bold hover:bg-brand-gold transition whitespace-nowrap active:scale-95 shadow-lg mt-2">
+                Book Audit
+            </button>
+        </div>
+    </div>
+
+    <div class="pt-40 pb-20 px-6 text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 reveal-on-scroll">
+            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-gold">EST. 2025 • DURBAN</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-8 reveal-on-scroll">
+            WE DON'T FIX COMPUTERS.<br>
+            <span class="text-brand-gold">WE BUILD LOGIC.</span>
+        </h1>
+        
+        <div class="bg-brand-card p-8 rounded-4xl border border-white/5 text-left mb-16 reveal-on-scroll max-w-2xl mx-auto relative overflow-hidden">
+             <div class="absolute top-0 right-0 p-8 opacity-5">
+                 <i class="fas fa-quote-right text-9xl"></i>
+             </div>
+             <p class="text-gray-300 mb-6 relative z-10 leading-relaxed">
+                 "I started RJ Digital Systems because I saw Durban wholesalers losing hours every day to manual data entry. My philosophy is simple: if a robot can do it, a human shouldn't. We don't just build websites; we build engines that drive your cash flow."
+             </p>
+             <div class="flex items-center gap-4">
+                 <div class="h-10 w-10 bg-brand-gold rounded-full flex items-center justify-center text-black font-bold">RJ</div>
+                 <div>
+                     <div class="text-sm font-bold text-white">Ryden Jonathan</div>
+                     <div class="text-xs text-brand-gold">Systems Architect & Founder</div>
+                 </div>
+             </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 text-left">
+            <div class="bg-brand-card rounded-4xl p-10 border border-white/5 hover:border-brand-gold/20 transition reveal-on-scroll hover-lift" style="transition-delay: 100ms;">
+                <i class="fas fa-shield-alt text-brand-gold text-3xl mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Enterprise Tech Stack</h3>
+                <p class="text-gray-400 leading-relaxed text-sm">
+                    We don't use experimental tools. We build your system on global standards: 
+                    <strong class="text-white">Zoho Finance, Google Cloud, and Meta (WhatsApp)</strong>. 
+                    You own the licenses. You own the data.
+                </p>
+            </div>
+            <div class="bg-brand-card rounded-4xl p-10 border border-white/5 hover:border-brand-gold/20 transition reveal-on-scroll hover-lift" style="transition-delay: 200ms;">
+                <i class="fas fa-bolt text-brand-gold text-3xl mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">The Result</h3>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li class="flex gap-2"><span class="text-red-500">Before:</span> Manual typing, wrong prices, lost papers.</li>
+                    <li class="flex gap-2"><span class="text-green-500">After:</span> Customer clicks → Invoice Drafted → You Approve.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="py-12 bg-black border-t border-white/5 text-center">
+        <p class="text-[10px] text-gray-600 uppercase tracking-widest font-mono">Ryden Jonathan T/A RJ Digital Systems • Durban</p>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('open')) { menu.classList.remove('open'); } else { menu.classList.add('open'); }
+        }
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const toggleBtn = document.querySelector('button[onclick="toggleMobileMenu()"]');
+            if (menu && menu.classList.contains('open') && !menu.contains(event.target) && !toggleBtn.contains(event.target)) { menu.classList.remove('open'); }
+        });
+        function openWhatsApp(sourceID) {
+            const number = "27639263011";
+            window.open(`https://wa.me/${number}?text=Hi%20RJ%20Digital,%20I'd%20like%20to%20know%20more.`, '_blank');
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirmed | RJ Digital Systems</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+    body { background-color: #050505; color: white; -webkit-tap-highlight-color: transparent; }
+    .reveal-card { animation: fadePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    @keyframes fadePop { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+</style>
+
+<script>
+    // SECURITY GATE
+    if (!sessionStorage.getItem("rj_token")) {
+        window.location.replace("index.html");
+    }
+    history.pushState(null, document.title, location.href);
+    window.addEventListener('popstate', function (event) { window.location.replace("index.html"); });
+</script>
+</head>
+<body class="min-h-screen flex items-center justify-center font-sans selection:bg-yellow-500 selection:text-black p-4">
+
+    <div class="max-w-md w-full bg-[#161616] rounded-[2.5rem] border border-white/10 p-10 text-center reveal-card shadow-2xl">
+        <div class="h-20 w-20 bg-green-500 rounded-full flex items-center justify-center text-black text-3xl mx-auto mb-8 shadow-[0_0_30px_rgba(34,197,94,0.4)] animate-pulse">
+            <i class="fas fa-check"></i>
+        </div>
+        
+        <h1 class="text-3xl font-bold mb-2">Deposit Logged.</h1>
+        <p class="text-gray-400 text-sm mb-4">Please complete the payment in the new tab.</p>
+
+        <p class="text-[10px] text-gray-500 mb-8 bg-white/5 p-3 rounded-lg">
+            <i class="fas fa-info-circle mr-1"></i> If payment failed, please WhatsApp us with Ref: <strong id="refDisplay" class="text-white">...</strong>
+        </p>
+
+        <div class="bg-white/5 rounded-2xl p-6 mb-8 text-left space-y-3 border border-white/5">
+            <div class="flex justify-between text-sm">
+                <span class="text-gray-500">Business</span>
+                <span class="font-bold" id="nameDisplay">...</span>
+            </div>
+            <div class="flex justify-between text-sm">
+                <span class="text-gray-500">Amount</span>
+                <span class="font-bold text-yellow-400" id="amountDisplay">...</span>
+            </div>
+            <div class="flex justify-between text-sm">
+                <span class="text-gray-500">Ref</span>
+                <span class="font-mono text-xs text-gray-600" id="uuidDisplay">...</span>
+            </div>
+        </div>
+
+        <button onclick="downloadPDF()" class="w-full py-4 bg-white text-black font-bold rounded-2xl hover:bg-yellow-400 transition mb-4 active:scale-95 shadow-lg">
+            <i class="fas fa-download mr-2"></i> Download Pro-Forma
+        </button>
+        
+        <a href="index.html" onclick="sessionStorage.clear()" class="text-xs text-gray-500 hover:text-white uppercase tracking-widest font-bold transition active:scale-95 inline-block p-2">Return Home</a>
+    </div>
+
+    <script>
+        document.getElementById("nameDisplay").innerText = sessionStorage.getItem("payerName");
+        document.getElementById("amountDisplay").innerText = "R " + sessionStorage.getItem("amount");
+        document.getElementById("uuidDisplay").innerText = sessionStorage.getItem("rj_token").slice(0,8);
+        document.getElementById("refDisplay").innerText = sessionStorage.getItem("rj_token").slice(0,8);
+
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(18);
+            doc.text("RJ DIGITAL SYSTEMS", 20, 20);
+            
+            doc.setFontSize(10);
+            doc.setFont("helvetica", "normal");
+            doc.text("Ryden Jonathan T/A RJ Digital Systems", 20, 26);
+            doc.text("Durban, South Africa", 20, 31);
+            
+            doc.setFontSize(14);
+            doc.text("Deposit Pro-Forma", 20, 45);
+            
+            doc.setLineWidth(0.5);
+            doc.line(20, 50, 190, 50);
+            
+            doc.setFontSize(11);
+            doc.text("Date: " + new Date().toLocaleDateString(), 20, 65);
+            doc.text("Client Name: " + sessionStorage.getItem("payerName"), 20, 75);
+            doc.text("Reference: " + sessionStorage.getItem("rj_token"), 20, 85);
+            
+            doc.setFont("helvetica", "bold");
+            doc.text("Amount Due: R " + sessionStorage.getItem("amount"), 20, 105);
+            
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(10);
+            doc.text("Non-VAT Vendor.", 20, 120);
+            
+            doc.save("RJDS_Deposit_Receipt.pdf");
+        }
+    </script>
+</body>
+</html>

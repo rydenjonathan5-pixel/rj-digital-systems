@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | RJ Digital Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: { black: '#050505', gold: '#FFD700' } },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>body { background-color: #050505; color: white; }</style>
+</head>
+<body class="h-screen flex flex-col items-center justify-center text-center p-6">
+
+    <div class="text-[10rem] font-bold text-white/5 leading-none select-none">404</div>
+    
+    <h1 class="text-3xl font-bold mb-4 -mt-10">System Glitch.</h1>
+    <p class="text-gray-400 mb-8 max-w-md">The page you are looking for does not exist. It might have been moved or deleted.</p>
+    
+    <a href="index.html" class="px-8 py-4 bg-brand-gold text-black font-bold rounded-2xl hover:bg-white transition transform hover:scale-105 shadow-xl shadow-brand-gold/20">
+        Return to Safety
+    </a>
+
+</body>
+</html>

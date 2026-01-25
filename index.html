@@ -1,97 +1,485 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RJ Digital Systems — Automate. Digitise. Profit.</title>
-<meta name="description" content="Business automation & digital transformation for Durban SMEs — Sage setup, inventory control and digital profiles that convert.">
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJ Digital Systems | WhatsApp Automation for Durban Wholesalers</title>
+    <meta name="description" content="Turn WhatsApp traffic into paid invoices automatically. Specialized automation for Durban wholesalers and KZN supply chains. POPIA Compliant.">
+    <meta property="og:title" content="RJ Digital Systems | Inventory Automation">
+    <meta property="og:description" content="Stop losing orders. We build systems that turn WhatsApp traffic into paid invoices.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_ZA">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "RJ Digital Systems",
+      "founder": "Ryden Jonathan",
+      "image": "https://rj-digital-systems.com/logo.png",
+      "description": "WhatsApp automation and inventory logic for Durban wholesalers.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Wentworth",
+        "addressRegion": "Durban",
+        "addressCountry": "ZA"
+      },
+      "priceRange": "R7500 - R15000",
+      "openingHours": "Mo-Fr 08:00-17:00"
+    }
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#050505',
+                            gold: '#FFD700', 
+                            card: '#111111', 
+                            surface: '#0a0a0a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { background-color: #050505; color: white; scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+        
+        /* The Gemini Gradient Mesh */
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.15) 0%, rgba(5, 5, 5, 1) 70%);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Interaction States */
+        .hover-lift { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 10px 30px -10px rgba(255, 215, 0, 0.1); }
+        .hover-lift:active { transform: scale(0.98); }
+
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform-origin: top;
+            transform: scaleY(0.95);
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+            margin-top: 1rem;
+            transform: scaleY(1);
+        }
+
+        /* Scroll Reveal Class */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
+<body class="font-sans antialiased selection:bg-brand-gold selection:text-black">
 
-<body>
+    <div class="fixed top-6 left-0 right-0 z-50 flex flex-col items-center px-4 pointer-events-none">
+        
+        <nav class="glass-panel rounded-full px-6 py-3 flex items-center justify-between gap-4 shadow-2xl w-full max-w-4xl relative z-50 bg-[#0a0a0a]/90 pointer-events-auto transition-all duration-300">
+            
+            <div class="flex items-center justify-center pl-2 select-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" fill="none" class="h-8 w-auto">
+                  <text x="150" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="48" fill="white" text-anchor="middle" letter-spacing="4">RJDS</text>
+                  <path d="M60 30 H 40 Q 30 30 30 40 V 60 Q 30 70 40 70 H 60" stroke="#FFD700" stroke-width="3" stroke-linecap="round" fill="none"/>
+                  <path d="M240 70 H 260 Q 270 70 270 60 V 40 Q 270 30 260 30 H 240" stroke="#FFD700" stroke-width="3" stroke-linecap="round" fill="none"/>
+                  <circle cx="30" cy="50" r="4" fill="#FFD700">
+                    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="270" cy="50" r="4" fill="#FFD700">
+                    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+                  </circle>
+                </svg>
+            </div>
 
-<header class="header">
-  <div class="container nav">
-    <div class="logo">RJ Digital Systems</div>
-    <button class="menu-toggle">☰</button>
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
-      <a href="#coverage">Coverage</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+            <div class="hidden md:flex gap-6 text-xs font-semibold text-gray-400">
+                <a href="#process" class="hover:text-white transition active:scale-95">Process</a>
+                <a href="#pricing" class="hover:text-white transition active:scale-95">Pricing</a>
+                <a href="about.html" class="hover:text-white transition active:scale-95">About</a>
+                <a href="faq.html" class="hover:text-white transition active:scale-95">FAQ</a>
+            </div>
 
-<section class="hero">
-  <div class="container">
-    <h1>Streamlining Durban Business.</h1>
-    <p>Turn manual paperwork into automated profit. Digitise inventory, automate Sage invoicing, and build digital profiles that convert.</p>
-    <div class="cta-buttons">
-      <a class="btn btn-primary" href="https://wa.me/27639263011?text=Hi%2C%20I%27d%20like%20a%20consultation" target="_blank">Chat on WhatsApp</a>
-      <a class="btn btn-outline" href="#services">See Services</a>
+            <div class="flex items-center gap-3">
+                <button onclick="openWhatsApp('NavBookAudit')" class="bg-white text-black px-5 py-2 rounded-full text-xs font-bold hover:bg-brand-gold transition whitespace-nowrap active:scale-95 shadow-lg shadow-white/10">
+                    Book Audit
+                </button>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2 focus:outline-none active:scale-90 transition">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="w-full max-w-[90%] glass-panel rounded-3xl flex flex-col items-center gap-4 py-6 text-sm font-bold text-gray-300 bg-[#111] pointer-events-auto shadow-2xl">
+            <a href="#process" onclick="toggleMobileMenu()" class="hover:text-brand-gold w-full text-center py-3 active:bg-white/5 transition">Process</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="hover:text-brand-gold w-full text-center py-3 active:bg-white/5 transition">Pricing</a>
+            <a href="about.html" class="hover:text-brand-gold w-full text-center py-3 active:bg-white/5 transition">About Us</a>
+            <a href="faq.html" class="hover:text-brand-gold w-full text-center py-3 active:bg-white/5 transition">FAQ</a>
+        </div>
     </div>
-  </div>
-</section>
 
-<section id="services" class="section container">
-  <h2>Services</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Sage Accounting Setup</h3>
-      <p>Full setup, data import, and staff training. Automate invoicing and reduce financial errors.</p>
+    <header class="relative min-h-screen w-full flex items-center justify-center overflow-hidden hero-gradient">
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24 reveal-on-scroll">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 hover:bg-white/10 transition cursor-default">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-[10px] font-bold tracking-widest uppercase text-gray-300">Active in Durban South</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight leading-[1] mb-8 drop-shadow-2xl">
+                FROM TRAFFIC<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200">TO INVOICE.</span>
+            </h1>
+            
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10 font-medium leading-relaxed">
+                We build high-speed websites that funnel leads directly to your WhatsApp Catalog, 
+                then use AI to automatically draft your invoices.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <button onclick="openWhatsApp('HeroStartAudit')" class="w-full sm:w-auto px-8 py-5 bg-white text-black rounded-3xl font-bold text-sm hover:bg-brand-gold transition shadow-xl hover-lift active:scale-95">
+                    Start Free Audit
+                </button>
+                <a href="#pricing" class="w-full sm:w-auto px-8 py-5 glass-panel text-white rounded-3xl font-bold text-sm hover:bg-white/10 transition active:scale-95 flex items-center justify-center">
+                    View Pricing
+                </a>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8 text-[10px] font-bold text-gray-500 uppercase tracking-widest border-t border-white/5 pt-8">
+                <span class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Designed for Durban Wholesalers</span>
+                <span class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> POPIA Compliant</span>
+                <span class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> Draft-Only Safety</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="process" class="py-32 bg-brand-black relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">The Logic Flow.</h2>
+                <p class="text-gray-400">How we turn a Google Search into a Paid Invoice.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-10 rounded-4xl bg-brand-card hover:bg-white/5 transition border border-white/5 group reveal-on-scroll hover-lift cursor-default">
+                    <div class="h-16 w-16 rounded-2xl bg-white/10 text-white flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-black transition-colors duration-500">
+                        <i class="fas fa-magnet"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">1. Funnel</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We build a website that ranks on Google. Instead of "Contact Forms," we push every customer directly into your <strong>WhatsApp Chat</strong>.
+                    </p>
+                </div>
+                
+                <div class="p-10 rounded-4xl bg-brand-card hover:bg-white/5 transition border border-white/5 group reveal-on-scroll hover-lift cursor-default" style="transition-delay: 100ms;">
+                    <div class="h-16 w-16 rounded-2xl bg-white/10 text-white flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-black transition-colors duration-500">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">2. Catalog</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Customers browse your products inside WhatsApp. They click, fill their cart, and hit send. No typing errors.
+                    </p>
+                </div>
+
+                <div class="p-10 rounded-4xl bg-brand-card hover:bg-white/5 transition border border-white/5 group reveal-on-scroll hover-lift cursor-default" style="transition-delay: 200ms;">
+                    <div class="h-16 w-16 rounded-2xl bg-white/10 text-white flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-gold group-hover:text-black transition-colors duration-500">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">3. Auto-Invoice</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        When a customer sends an order, the system instantly creates a draft Invoice in Zoho and pings you for approval.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-brand-card rounded-t-[4rem]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-10 pt-10 reveal-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Investment.</h2>
+                <p class="text-gray-400">One-time setup fees. You own the system forever.</p>
+            </div>
+
+            <div class="flex justify-center mb-16 reveal-on-scroll">
+                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-[10px] font-bold uppercase tracking-widest">
+                    <i class="fas fa-clock"></i> Limited Capacity: Max 4 New Clients / Month
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="p-8 rounded-4xl bg-brand-surface border border-white/5 hover:border-brand-gold/30 transition hover-lift flex flex-col justify-between min-h-[500px] reveal-on-scroll active:border-brand-gold/50 active:bg-brand-surface/80" onclick="void(0)">
+                    <div>
+                        <div class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Tier 1</div>
+                        <h3 class="text-2xl font-bold mb-2">Digital Storefront</h3>
+                        <div class="text-3xl font-extrabold text-white mb-1">R 7,500</div>
+                        <div class="text-[10px] text-gray-500 font-bold uppercase mb-6 tracking-wide">50% DEPOSIT (R 3,750)</div>
+                        <p class="text-xs text-gray-400 mb-6">Get found online. Sell on WhatsApp.</p>
+                        <ul class="space-y-3 text-xs text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gray-500"></i> Professional Website</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gray-500"></i> Google SEO Optimization</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-brand-gold"></i> <strong>WhatsApp Catalog Setup (Top 20)</strong></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gray-500"></i> Direct WhatsApp Funnel</li>
+                        </ul>
+                    </div>
+                    <button onclick="openPaymentModal('Digital Storefront - R7500')" class="w-full mt-8 py-4 rounded-2xl border border-white/20 hover:bg-white hover:text-black font-bold text-xs transition active:scale-95">START NOW</button>
+                </div>
+
+                <div class="p-8 rounded-4xl bg-white text-black hover-lift flex flex-col justify-between min-h-[500px] relative shadow-2xl shadow-brand-gold/10 lg:scale-105 z-10 reveal-on-scroll active:scale-[1.04]" style="transition-delay: 100ms;" onclick="void(0)">
+                    <div>
+                        <div class="text-xs font-bold text-brand-gold-dim uppercase tracking-widest mb-4">Tier 2 • Best Value</div>
+                        <h3 class="text-2xl font-bold mb-2">Automation Core</h3>
+                        <div class="text-3xl font-extrabold text-black mb-1">R 15,000</div>
+                        <div class="text-[10px] text-gray-500 font-bold uppercase mb-6 tracking-wide">50% DEPOSIT (R 7,500)</div>
+                        <p class="text-xs text-gray-600 mb-6">Stop manual typing. Fully automated invoicing.</p>
+                        <ul class="space-y-3 text-xs text-gray-800">
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-gold-dim"></i> <strong>Everything in Tier 1</strong></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-gold-dim"></i> <strong>Cart-to-Invoice Automation</strong></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-gold-dim"></i> Google Sheets Database</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-gold-dim"></i> Zoho Invoice Integration</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-gold-dim"></i> "Draft-Only" Safety Logic</li>
+                        </ul>
+                    </div>
+                    <button onclick="openPaymentModal('Automation Core - R15000')" class="w-full mt-8 py-4 rounded-2xl bg-black text-white hover:bg-brand-gold hover:text-black font-bold text-xs transition active:scale-95">SECURE SLOT</button>
+                </div>
+
+                <div class="p-8 rounded-4xl bg-brand-surface border border-white/5 hover:border-brand-gold/30 transition hover-lift flex flex-col justify-between min-h-[500px] reveal-on-scroll active:border-purple-500/50 active:bg-brand-surface/80" style="transition-delay: 200ms;" onclick="void(0)">
+                    <div>
+                        <div class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-4">Tier 3</div>
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                        <div class="text-3xl font-extrabold text-white mb-1">Custom</div>
+                        <div class="text-[10px] text-gray-500 font-bold uppercase mb-6 tracking-wide">QUOTE BASED</div>
+                        <p class="text-xs text-gray-400 mb-6">For high volume & custom API needs.</p>
+                        <ul class="space-y-3 text-xs text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500"></i> Everything in Tier 2</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500"></i> CRM Integration</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-500"></i> Priority SLA Support</li>
+                        </ul>
+                    </div>
+                    <button onclick="openWhatsApp('Enterprise')" class="w-full mt-8 py-4 rounded-2xl border border-white/20 hover:bg-white hover:text-black font-bold text-xs transition active:scale-95">CHAT NOW</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+            <p class="text-[10px] text-gray-600 uppercase tracking-widest font-mono">
+                Ryden Jonathan T/A RJ Digital Systems • Durban, South Africa
+            </p>
+            <div class="flex justify-center gap-6 text-xs text-gray-500">
+                 <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+                 <a href="terms.html" class="hover:text-white transition">Terms of Service</a>
+                 <a href="https://wa.me/27639263011" class="hover:text-white transition">WhatsApp Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="rj-widget-container" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999; font-family: 'Plus Jakarta Sans', sans-serif; display: flex; flex-direction: column-reverse; align-items: flex-end; gap: 12px; pointer-events: none;">
+        <style>
+            #rj-trigger-btn { width: 56px; height: 56px; background: #FFD700; border-radius: 50%; border: none; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.25); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); color: black; font-size: 24px; pointer-events: auto; position: relative; z-index: 20; }
+            #rj-trigger-btn:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 15px 35px rgba(255, 215, 0, 0.35); }
+            #rj-trigger-btn:active { transform: scale(0.90) translateY(0); box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2); }
+            #rj-content-box { background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); padding: 16px 20px; border-radius: 24px; min-width: 260px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8); opacity: 0; transform: translateY(15px) scale(0.95); pointer-events: none; transform-origin: bottom right; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; gap: 2px; }
+            #rj-widget-container.active #rj-content-box { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+            #rj-widget-container.active #rj-trigger-btn { background: #1a1a1a; color: #FFD700; transform: rotate(135deg); box-shadow: 0 4px 20px rgba(0,0,0,0.5); border: 1px solid rgba(255, 215, 0, 0.2); }
+            .rj-link-item { display: flex; align-items: center; gap: 14px; color: #9ca3af; text-decoration: none; padding: 12px 8px; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 13px; font-weight: 600; transition: all 0.2s ease; border-radius: 8px; }
+            .rj-link-item:last-child { border-bottom: none; }
+            .rj-link-item:hover { color: #FFD700; background: rgba(255,255,255,0.03); transform: translateX(4px); }
+            .rj-icon { width: 20px; text-align: center; font-size: 16px; }
+            @media(max-width: 480px) { #rj-widget-container { bottom: 20px; right: 20px; } .rj-link-item { padding: 14px 8px; } }
+        </style>
+        <button id="rj-trigger-btn" onclick="toggleRjWidget()" aria-label="Open Support Options">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+        </button>
+        <div id="rj-content-box">
+            <div style="font-size: 10px; color: #555; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 8px; text-transform: uppercase; padding-left: 8px;">Direct Lines</div>
+            <a href="https://wa.me/27639263011?text=Hi%20RJ%20Digital,%20I%20need%20support%20assistance." target="_blank" class="rj-link-item"><span class="rj-icon">💬</span> WhatsApp Support</a>
+            <a href="tel:+27639263011" class="rj-link-item"><span class="rj-icon">📞</span> Voice Call</a>
+            <a href="mailto:support@rj-digital-systems.com" class="rj-link-item"><span class="rj-icon">✉️</span> Email Desk</a>
+        </div>
     </div>
-    <div class="card">
-      <h3>Inventory Control</h3>
-      <p>Stop theft and track stock automatically from warehouse to shelf with scanning & mobile NCR.</p>
+
+    <div id="paymentModal" class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/95 backdrop-blur-sm px-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-brand-card w-full max-w-md rounded-4xl border border-white/10 p-8 relative transform scale-95 transition-transform duration-300">
+            
+            <button onclick="closePaymentModal()" class="absolute top-6 right-6 text-gray-500 hover:text-white bg-white/5 rounded-full p-2 w-8 h-8 flex items-center justify-center transition active:scale-90"><i class="fas fa-times"></i></button>
+            
+            <h3 class="text-xl font-bold mb-2 text-brand-gold" id="payTitle">Secure Booking</h3>
+            <p class="text-gray-400 text-xs mb-8">50% Deposit to initiate setup.</p>
+            
+            <div id="payStateInput">
+                <div class="bg-yellow-500/10 p-4 rounded-xl mb-6 flex gap-3">
+                     <i class="fas fa-lock text-brand-gold mt-1"></i>
+                     <p class="text-[10px] text-gray-300 leading-tight">You will be redirected to Yoco for secure processing. No card details are stored on this site.</p>
+                </div>
+                <div class="space-y-4">
+                    <input type="text" id="payName" placeholder="Business Name" class="w-full bg-black border border-white/10 rounded-2xl px-4 py-3 text-sm focus:border-brand-gold outline-none text-white transition-colors">
+                    <input type="text" id="payAmount" readonly class="w-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold font-bold rounded-2xl px-4 py-3 text-sm">
+                    <button onclick="redirectToYoco()" class="w-full bg-brand-gold text-black font-bold rounded-2xl py-4 hover:bg-white transition flex justify-center items-center gap-2 active:scale-95">
+                        <i class="fas fa-lock text-xs"></i> PAY DEPOSIT
+                    </button>
+                </div>
+            </div>
+
+            <div id="payStateConfirm" class="hidden text-center py-4">
+                <div class="h-16 w-16 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                    <i class="fas fa-external-link-alt text-brand-gold text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Payment Window Open</h3>
+                <p class="text-gray-400 text-xs mb-6 px-4">Please complete your secure transaction in the new tab. Once done, confirm below to generate your receipt.</p>
+                
+                <div class="space-y-3">
+                    <button onclick="finalizeBooking()" class="w-full bg-green-500 hover:bg-green-400 text-black font-bold py-4 rounded-2xl transition active:scale-95 shadow-lg shadow-green-500/20">
+                        <i class="fas fa-check mr-2"></i> I Have Completed Payment
+                    </button>
+                    <button onclick="resetPaymentModal()" class="w-full bg-white/5 hover:bg-white/10 text-gray-400 py-3 rounded-2xl text-xs font-bold transition active:scale-95">
+                        Cancel / Retry
+                    </button>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="card">
-      <h3>Digital Profiles</h3>
-      <p>Professional websites and WhatsApp systems that convert online leads into paying customers.</p>
-    </div>
-  </div>
-</section>
 
-<section id="why" class="section container">
-  <h2>Why Work With Us?</h2>
-  <ul class="features">
-    <li>✔ Durban-based implementation</li>
-    <li>✔ Real business automation expertise</li>
-    <li>✔ Faster invoicing → faster cashflow</li>
-    <li>✔ Stock accuracy up to 99%</li>
-  </ul>
-</section>
+    <script>
+        // MOBILE MENU
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('open')) { menu.classList.remove('open'); } else { menu.classList.add('open'); }
+        }
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const toggleBtn = document.querySelector('button[onclick="toggleMobileMenu()"]');
+            if (menu.classList.contains('open') && !menu.contains(event.target) && !toggleBtn.contains(event.target)) { menu.classList.remove('open'); }
+        });
 
-<section id="coverage" class="section container">
-  <h2>Coverage</h2>
-  <p>We serve Durban, Pinetown, Phoenix, Umhlanga & surrounding KZN areas.</p>
-</section>
+        // WHATSAPP
+        function openWhatsApp(sourceID) {
+            const number = "27639263011";
+            let msg = "";
+            if (sourceID === 'NavBookAudit') msg = "Hi RJ Digital, I'd like to book a system audit via your website.";
+            else if (sourceID === 'HeroStartAudit') msg = "Hi RJ Digital, I want to start my free system audit.";
+            else if (sourceID === 'Enterprise') msg = "Hi RJ Digital, I am interested in a Custom Enterprise Solution.";
+            else msg = "Hi RJ Digital, I'm contacting you via your website.";
+            window.open(`https://wa.me/${number}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
 
-<section id="contact" class="section container">
-  <h2>Contact Us</h2>
-  <p>Fill in and we’ll reach you shortly.</p>
+        // PAYMENT LOGIC (FIXED)
+        function openPaymentModal(serviceName) {
+            const modal = document.getElementById('paymentModal');
+            const inner = modal.querySelector('div');
+            // Reset to State 1
+            document.getElementById('payStateInput').classList.remove('hidden');
+            document.getElementById('payStateConfirm').classList.add('hidden');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => { modal.classList.remove('opacity-0'); modal.classList.add('opacity-100'); inner.classList.remove('scale-95'); inner.classList.add('scale-100'); }, 10);
+            document.getElementById('paymentModal').classList.add('flex');
+            document.getElementById('payTitle').innerText = serviceName;
+            
+            let price = 0;
+            if(serviceName.includes('7500')) price = 3750;
+            else if(serviceName.includes('15000')) price = 7500;
+            else price = 2500; 
+            
+            document.getElementById('payAmount').value = "R " + price;
+            window.currentPrice = price;
+            window.serviceName = serviceName;
+        }
 
-  <form name="contact" method="POST" data-netlify="true" class="form">
-    <input type="hidden" name="form-name" value="contact">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="text" name="company" placeholder="Company Name">
-    <input type="email" name="email" placeholder="Email Address" required>
-    <input type="text" name="phone" placeholder="Phone Number">
-    <textarea name="message" placeholder="How can we assist you?" rows="5"></textarea>
-    <button type="submit" class="btn btn-primary">Send Message</button>
-  </form>
+        function closePaymentModal() {
+            const modal = document.getElementById('paymentModal');
+            const inner = modal.querySelector('div');
+            modal.classList.remove('opacity-100'); modal.classList.add('opacity-0');
+            inner.classList.remove('scale-100'); inner.classList.add('scale-95');
+            setTimeout(() => { modal.classList.add('hidden'); modal.classList.remove('flex'); }, 300);
+        }
 
-  <p class="alt-contact">
-    Prefer WhatsApp?  
-    <a href="https://wa.me/27639263011" target="_blank">Click here</a>
-  </p>
+        document.getElementById('paymentModal').addEventListener('click', function(e) { if (e.target === this) closePaymentModal(); });
 
-</section>
+        // STEP 1: OPEN YOCO & SWAP UI
+        function redirectToYoco() {
+            const name = document.getElementById('payName').value;
+            if(!name) { alert("Enter Business Name"); return; }
+            
+            // Store data but DO NOT redirect yet
+            const uuid = 'RJ-' + Date.now().toString().slice(-6);
+            sessionStorage.setItem("rj_token", uuid); 
+            sessionStorage.setItem("payerName", name);
+            sessionStorage.setItem("amount", window.currentPrice);
 
-<footer class="footer">
-  © 2025 RJ Digital Systems — Durban, South Africa
-</footer>
+            // Open Yoco in new tab
+            const yocoLink = `https://pay.yoco.com/rj-digital-systems?amount=${window.currentPrice}&reference=${encodeURIComponent(name)}`;
+            window.open(yocoLink, '_blank');
 
-<script src="script.js"></script>
+            // Swap to "Waiting" State
+            document.getElementById('payStateInput').classList.add('hidden');
+            document.getElementById('payStateConfirm').classList.remove('hidden');
+        }
+
+        // STEP 2: USER MANUALLY CONFIRMS
+        function finalizeBooking() {
+            window.location.href = "confirmation.html";
+        }
+
+        // STEP 2B: USER CANCELS
+        function resetPaymentModal() {
+            document.getElementById('payStateConfirm').classList.add('hidden');
+            document.getElementById('payStateInput').classList.remove('hidden');
+        }
+
+        // WIDGET LOGIC
+        const rjContainer = document.getElementById('rj-widget-container');
+        let isWidgetOpen = false;
+        function toggleRjWidget() {
+            isWidgetOpen = !isWidgetOpen;
+            if (isWidgetOpen) { rjContainer.classList.add('active'); } else { rjContainer.classList.remove('active'); }
+        }
+        window.addEventListener('scroll', () => { if (isWidgetOpen) { isWidgetOpen = false; rjContainer.classList.remove('active'); } }, { passive: true });
+        document.addEventListener('click', (e) => {
+            if (isWidgetOpen && !rjContainer.contains(e.target)) { isWidgetOpen = false; rjContainer.classList.remove('active'); }
+        });
+
+        // SCROLL REVEAL
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>

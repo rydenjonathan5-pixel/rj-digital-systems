@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | RJ Digital Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: { black: '#050505', gold: '#FFD700', card: '#111111' } },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    borderRadius: { '4xl': '2.5rem' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #ccc; }
+        h1, h2, h3 { color: white; }
+        .glass-panel { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen selection:bg-brand-gold selection:text-black">
+
+    <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav class="glass-panel rounded-full px-6 py-3 flex items-center gap-4 shadow-2xl bg-[#0a0a0a]/90 pointer-events-auto">
+            <a href="index.html" class="flex items-center gap-2 hover:text-brand-gold transition">
+                <i class="fas fa-arrow-left text-xs"></i>
+                <span class="font-bold text-sm">Return Home</span>
+            </a>
+        </nav>
+    </div>
+
+    <div class="pt-32 pb-20 px-6 max-w-3xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-4">Terms of Service.</h1>
+            <p class="text-sm text-gray-500 font-mono uppercase tracking-widest">Effective Date: January 2026</p>
+        </div>
+
+        <div class="space-y-12 text-sm leading-relaxed">
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-brand-gold">1. Acceptance</h2>
+                <p>By accessing the RJ Digital Systems website ("The Service"), you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access the Service.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-white">2. Intellectual Property</h2>
+                <p>The Service and its original content, features, and functionality (including but not limited to the "Hybrid Automation" methodology, code snippets, and visual design) are and will remain the exclusive property of Ryden Jonathan T/A RJ Digital Systems. Our content is protected by copyright and intellectual property laws of South Africa.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-white">3. Links To Other Web Sites</h2>
+                <p>Our Service may contain links to third-party web sites (e.g., Yoco, WhatsApp, Zoho) that are not owned or controlled by RJ Digital Systems. We assume no responsibility for the content, privacy policies, or practices of any third-party web sites or services.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-white">4. Limitation of Liability</h2>
+                <p>In no event shall RJ Digital Systems, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-white">5. Governing Law</h2>
+                <p>These Terms shall be governed and construed in accordance with the laws of the Republic of South Africa, without regard to its conflict of law provisions.</p>
+            </section>
+        </div>
+    </div>
+
+    <footer class="py-12 bg-black border-t border-white/5 text-center">
+        <p class="text-[10px] text-gray-600 uppercase tracking-widest font-mono">Ryden Jonathan T/A RJ Digital Systems • Durban</p>
+    </footer>
+</body>
+</html>
